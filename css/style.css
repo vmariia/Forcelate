@@ -1,0 +1,76 @@
+body {
+    background: #C6DBEC;
+}
+table {
+    border-collapse: collapse;
+}
+thead {
+    background: #454345;
+    color: #fff;   
+}
+thead th {
+    padding: 15px;
+}
+table, td, th {
+  border: 2px solid #DDDDDD;
+  padding: 5px;
+}
+tbody {
+  background: #fff;
+  text-align: center;
+}   
+.nav {
+  margin-bottom: 20px; 
+}    
+.nav a, .search-title-nav a {
+  padding: 0px 10px;
+  position: relative;
+  cursor: pointer;
+}
+.nav a:nth-child(1) {
+  padding-left: 0px;
+}
+.nav a.play-button {
+  position: relative;
+}
+.nav a.play-button:after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  width: 2px;
+  background: #454345;
+}
+.nav a i, .search-title-nav a i{
+  font-size: 40px;
+  vertical-align: middle;
+}
+.nav a span, .search-title-nav a span{
+  vertical-align: middle;
+  font-size: 18px;
+}
+.nav a.play-button i, .nav a.new-button i {
+  color: #35AA0A;
+}
+.nav a.delete-button i,
+.search-title-nav a.clear-button i {
+  color: #DB5033;
+}
+.nav a.respons-button i,
+.search-title-nav a.undo-button i {
+  color: #C2C1C3;
+}
+.search-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+h2 {
+    margin: 0px;
+}
+.form-control {
+  width: 100%;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}

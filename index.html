@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="main-table">
+        <h1>Post trucks</h1>  
+        <div class="nav">      
+            <a class="play-button">     
+                <i class="material-icons">play_circle_filled</i>
+            </a>
+            <a id="show-modal" v-on:click="addRow($index)" class="new-button">
+                <i class="material-icons">add</i>
+                <span>New</span>
+            </a>
+            <a class="delete-button"  v-on:click="removeRow($index)">
+                <i class="material-icons">clear</i>
+                <span>Delete All</span>
+            </a>
+            <a class="respons-button">
+                <i class="material-icons">refresh</i>
+                <span>Respons All</span>
+            </a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th v-for="key in gridColumns">
+                      {{ key | capitalize}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="row in rows" track-by="$index">
+                    <td><input class="form-control" v-model="row.call"/></td>
+                    <td><input class="form-control" v-model="row.read"/></td>
+                    <td><input class="form-control" v-model="row.sound"/></td>
+                    <td><input class="form-control" v-model="row.truck"/></td>
+                    <td><input class="form-control" v-model="row.origin"/></td>
+                    <td><input class="form-control" v-model="row.destination"/></td>
+                    <td><input class="form-control" v-model="row.pickup"/></td>
+                    <td><input class="form-control" v-model="row.dho"/></td>
+                    <td><input class="form-control" v-model="row.dhd"/></td>
+                    <td><input class="form-control" v-model="row.fp"/></td>
+                    <td><input class="form-control" v-model="row.length"/></td>
+                    <td><input class="form-control" v-model="row.weight"/></td>
+                    <td><input class="form-control" v-model="row.trip"/></td>
+                    <td><input class="form-control" v-model="row.alarm"/></td>
+                    <td><input class="form-control" v-model="row.actions"/></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="search-table">
+        <div class="search-title">
+            <h2>Search results: Total: 2</h2>
+            <div class="search-title-nav">
+                <a class="undo-button">
+                    <i class="material-icons">replay</i>
+                    <span>Undo</span>
+                </a>
+                <a v-on:click="removeData(($index))" class="clear-button">
+                    <i class="material-icons">do_not_disturb_alt</i>
+                    <span>Clear</span>
+                </a>
+            </div>
+        </div>
+        <table id="search-table">
+        <thead>
+          <tr>
+            <th v-for="key in gridColumns">
+              {{ key | capitalize}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="entry in gridData">
+            <td v-for="key in gridColumns">
+              {{entry[key]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+<script src="js/global.js"></script>
+
+</body>
+</html>
